@@ -1,0 +1,19 @@
+<div class="container">
+  <h3>Selecciona una opción</h3>
+  <div class="opciones">
+    <input type="radio" [(ngModel)]="opcion" name="dia" value="lunes" checked> Lunes
+    <input type="radio" [(ngModel)]="opcion" name="dia" value="martes"> Martes
+    <input type="radio" [(ngModel)]="opcion" name="dia" value="miercoles"> Miércoles
+    <input type="radio" [(ngModel)]="opcion" name="dia" value="jueves"> Jueves
+    <input type="radio" [(ngModel)]="opcion" name="dia" value="viernes"> Viernes
+  </div>
+  <!-- Directiva estructural -->
+  <div [ngSwitch]="opcion">
+    <p class="item" *ngSwitchCase="'lunes'">Es momento de comenzar la semana con toda la actitud</p>
+    <p class="item" *ngSwitchCase="'martes'">Debes de ir a correr</p>
+    <p class="item" *ngSwitchCase="'miercoles'">No le temas al día más largo de la semana</p>
+    <p class="item" *ngSwitchCase="'jueves'">Es momento de ir a comer unos buenos tacos</p>
+    <p class="item" *ngSwitchCase="'viernes'">Hoy es día de salir temprano</p>
+    <p class="item" *ngSwitchDefault>Opción por defecto</p>
+  </div>
+</div>
