@@ -1,0 +1,22 @@
+<div class="container">
+  <!-- Directivas estructurales -->
+  <div class="columnas" *ngIf="visibleA; else alternativoA">
+    <h3>Información A</h3>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A tempore, deleniti consequatur ducimus rerum iure at eius ullam earum aut sed dolorem veritatis eligendi cumque quae, repellat quo! Molestias, quod! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam sapiente impedit veritatis vel, perferendis eius esse nesciunt voluptatum nam animi facere obcaecati dolorum itaque doloribus, ut atque, ratione deleniti rerum.</p>
+  </div>
+  <!-- El caso contrario siempre debe ir despues del if -->
+  <ng-template #alternativoA>
+    <div class="columnas">
+      <h3>Texto Alternativo</h3>
+      <p>Mi contenio alternativo de tipo A</p>
+    </div>
+  </ng-template>
+  <div class="columnas" *ngIf="visibleB">
+    <h3>Información B</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat iure reiciendis deserunt enim iusto. Molestiae rerum expedita alias aliquid cum quis totam dicta consequatur nam. Dicta explicabo accusantium recusandae reiciendis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste labore omnis cupiditate, aliquam necessitatibus, molestias porro cumque, velit est qui commodi tempore libero perspiciatis exercitationem consequatur asperiores! Omnis, sit numquam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil numquam minus unde, esse, officiis, ex obcaecati natus quibusdam aliquam itaque aperiam dolorum ducimus? Praesentium nulla rerum, consequatur neque eligendi expedita!</p>
+  </div>
+</div>
+<div class="controls">
+  <button (click)="visibleA = false">Información A</button>
+  <button (click)="visibleB = !visibleB">Información B</button>
+</div>

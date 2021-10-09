@@ -6,21 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./colores.component.css']
 })
 export class ColoresComponent implements OnInit {
-  color:String = '';
+  color:string = '';
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
+    this.colorHex()
   }
 
   // Métodos
-  generarRandom(): String {
+  generarRandom(): string {
     return Math.floor(Math.random() * 255).toString(16)
   }
 
-  colorHex():String {
+  colorHex() {
     this.color = `#${this.generarRandom()}${this.generarRandom()}${this.generarRandom()}`;
-    return this.color;
   }
 
 }

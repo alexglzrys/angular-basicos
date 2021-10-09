@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid red;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.columnas {
+  flex-basis: 48%;
+}
+button {
+  padding: .5rem;
+  margin-right: 8px;
+  cursor: pointer;
+}

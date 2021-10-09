@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class AleatorioComponent implements OnInit {
 
   // Props (Entrada de información desde el componente padre)
-  @Input() color:String = ''
+  @Input() color:string = ''
 
   // Propiedad
   aleatorio:Number = Math.floor(Math.random() * 100)
