@@ -1,4 +1,4 @@
-<div [ngStyle]="{'color': color, 'background': colorHex()}">
+<div [ngStyle]="{'background': colorHex()}">
   <p>Colores aleatorios</p>
-  <app-aleatorio></app-aleatorio>
+  <app-aleatorio [color]="color"></app-aleatorio>
 </div>

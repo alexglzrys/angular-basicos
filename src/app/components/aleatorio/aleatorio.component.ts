@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-aleatorio',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./aleatorio.component.css']
 })
 export class AleatorioComponent implements OnInit {
+
+  // Props (Entrada de información desde el componente padre)
+  @Input() color:String = ''
 
   // Propiedad
   aleatorio:Number = Math.floor(Math.random() * 100)
