@@ -7,6 +7,7 @@ import { ColoresComponent } from './components/colores/colores.component';
 import { InformacionComponent } from './components/informacion/informacion.component';
 import { OpcionesComponent } from './components/opciones/opciones.component';
 import { FormsModule } from '@angular/forms';
+import { EstilosComponent } from './components/estilos/estilos.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { FormsModule } from '@angular/forms';
     AleatorioComponent,
     ColoresComponent,
     InformacionComponent,
-    OpcionesComponent
+    OpcionesComponent,
+    EstilosComponent
   ],
   imports: [
     BrowserModule,

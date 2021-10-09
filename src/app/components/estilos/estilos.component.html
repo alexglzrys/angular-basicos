@@ -1,0 +1,6 @@
+<div class="estilos">
+  <!-- Directivas de atributo para estilos dinámicos -->
+  <div class="cuadro" [ngStyle]="{'background': fondo}"></div>
+  <button (click)="fondo = 'teal'" [ngClass]="{active: fondo == 'teal'}">Verde</button>
+  <button (click)="fondo = 'crimson'" [ngClass]="fondo">Rojo</button>
+</div>

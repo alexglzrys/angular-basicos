@@ -1,0 +1,21 @@
+.cuadro {
+  height: 150px;
+  width: 150px;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+}
+button {
+  margin-right: .5rem;
+  padding: .5rem;
+
+}
+
+.crimson {
+  background-color: crimson;
+  color: white;
+}
+.active {
+  background-color: steelblue;
+  color: white;
+  cursor: pointer;
+}
