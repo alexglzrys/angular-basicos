@@ -1,0 +1,31 @@
+.libro {
+  margin-top: 1rem;
+}
+.libro * {
+  margin: 0;
+}
+.libro figure {
+  display: flex;
+  align-items: flex-start;
+}
+.libro img {
+  margin-right: .5rem;
+}
+.libro p {
+  margin: 1rem 0;
+}
+.libro a {
+  display: inline-block;
+  margin-right: 1rem;
+}
+.info {
+  display: inline-block;
+  padding: .3rem;
+  color: white;
+  background-color: crimson;
+  cursor: pointer;
+}
+.descuento {
+  margin-top: .5rem !important;
+  color: teal;
+}

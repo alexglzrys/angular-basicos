@@ -8,6 +8,7 @@ import { InformacionComponent } from './components/informacion/informacion.compo
 import { OpcionesComponent } from './components/opciones/opciones.component';
 import { FormsModule } from '@angular/forms';
 import { EstilosComponent } from './components/estilos/estilos.component';
+import { ListaComponent } from './components/lista/lista.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { EstilosComponent } from './components/estilos/estilos.component';
     ColoresComponent,
     InformacionComponent,
     OpcionesComponent,
-    EstilosComponent
+    EstilosComponent,
+    ListaComponent
   ],
   imports: [
     BrowserModule,

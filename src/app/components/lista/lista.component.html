@@ -1,0 +1,16 @@
+<div class="lista">
+  <!-- Directivas repetitivas -->
+  <div class="libro" *ngFor="let libro of libros; index as i; first as esPrimero; last as esUltimo; odd as esPar; even as esImpar">
+    <figure>
+      <img [src]="libro.image" [alt]="libro.title">
+      <figcaption>
+        <h3>{{ libro.title }}</h3>
+        <p>{{ libro.description }}</p>
+        <a [href]="'https://google.com/search?q=' + libro.author" target="_blank">{{ libro.author }}</a>
+        <div *ngIf="esPrimero" class="info" (click)="masInformacion(libro)">Más vendido</div>
+        <div *ngIf="esUltimo" class="info">El menos vendido</div>
+        <div *ngIf="i == 2" class="descuento">Descuento del 20%</div>
+      </figcaption>
+    </figure>
+  </div>
+</div>

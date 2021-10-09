@@ -1,0 +1,28 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-lista',
+  templateUrl: './lista.component.html',
+  styleUrls: ['./lista.component.css']
+})
+export class ListaComponent implements OnInit {
+
+  libros: Array<Object> = []
+
+  constructor() { }
+
+  ngOnInit(): void {
+    this.libros = [
+      {id: 1, title: 'PHP dede Cero', description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit, conubia ornare class tincidunt etiam leo senectus, mauris curabitur nunc nostra phasellus a. Nostra velit fames mattis mauris tristique neque dictumst fringilla, sociis convallis id posuere maecenas sodales mus blandit eros, dignissim justo rutrum nullam vulputate pulvinar ut. Ligula accumsan sagittis luctus nec torquent fusce faucibus litora senectus leo, aliquam maecenas potenti natoque eget curabitur bibendum elementum eros taciti mattis, quis quam justo vulputate sem diam cum nulla a.', author: 'Nicolas Mendienta', image: 'https://via.placeholder.com/150', url: 'http://www.libro.com'},
+      {id: 2, title: 'Bases de Datos Relacionales', description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit, conubia ornare class tincidunt etiam leo senectus, mauris curabitur nunc nostra phasellus a. Nostra velit fames mattis mauris tristique neque dictumst fringilla, sociis convallis id posuere maecenas sodales mus blandit eros, dignissim justo rutrum nullam vulputate pulvinar ut. Ligula accumsan sagittis luctus nec torquent fusce faucibus litora senectus leo, aliquam maecenas potenti natoque eget curabitur bibendum elementum eros taciti mattis, quis quam justo vulputate sem diam cum nulla a.', author: 'Mario Molina', image: 'https://via.placeholder.com/150', url: 'http://www.libro.com'},
+      {id: 3, title: 'CSS Avanzado', description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit, conubia ornare class tincidunt etiam leo senectus, mauris curabitur nunc nostra phasellus a. Nostra velit fames mattis mauris tristique neque dictumst fringilla, sociis convallis id posuere maecenas sodales mus blandit eros, dignissim justo rutrum nullam vulputate pulvinar ut. Ligula accumsan sagittis luctus nec torquent fusce faucibus litora senectus leo, aliquam maecenas potenti natoque eget curabitur bibendum elementum eros taciti mattis, quis quam justo vulputate sem diam cum nulla a.', author: 'Valeria González', image: 'https://via.placeholder.com/150', url: 'http://www.libro.com'},
+      {id: 4, title: 'Git', description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit, conubia ornare class tincidunt etiam leo senectus, mauris curabitur nunc nostra phasellus a. Nostra velit fames mattis mauris tristique neque dictumst fringilla, sociis convallis id posuere maecenas sodales mus blandit eros, dignissim justo rutrum nullam vulputate pulvinar ut. Ligula accumsan sagittis luctus nec torquent fusce faucibus litora senectus leo, aliquam maecenas potenti natoque eget curabitur bibendum elementum eros taciti mattis, quis quam justo vulputate sem diam cum nulla a.', author: 'Santiago Ramírez', image: 'https://via.placeholder.com/150', url: 'http://www.libro.com'},
+      {id: 5, title: 'Linux', description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit, conubia ornare class tincidunt etiam leo senectus, mauris curabitur nunc nostra phasellus a. Nostra velit fames mattis mauris tristique neque dictumst fringilla, sociis convallis id posuere maecenas sodales mus blandit eros, dignissim justo rutrum nullam vulputate pulvinar ut. Ligula accumsan sagittis luctus nec torquent fusce faucibus litora senectus leo, aliquam maecenas potenti natoque eget curabitur bibendum elementum eros taciti mattis, quis quam justo vulputate sem diam cum nulla a.', author: 'Mireya González', image: 'https://via.placeholder.com/150', url: 'http://www.libro.com'}
+    ]
+  }
+
+  masInformacion(libro) {
+    alert(`Este libro ${libro.title} es el más vendido, y pertenece al autor ${libro.author}`)
+  }
+
+}
