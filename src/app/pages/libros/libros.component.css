@@ -29,3 +29,17 @@
   margin-top: .5rem !important;
   color: teal;
 }
+
+.error404 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.error404 img{
+  display: block;
+  width: 35%;
+}
+.error404 p {
+  font-size: 2rem;
+  margin-top: 1rem;
+}

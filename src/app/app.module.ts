@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { AcercaDeComponent } from './pages/acerca-de/acerca-de.component';
@@ -28,6 +29,7 @@ const routes: Routes = [
   imports: [
     PagesModule,
     BrowserModule,
+    HttpClientModule, // Usar servicio de HTTP
     RouterModule.forRoot(routes), // Registrar las rutas de la aplicación
   ],
   providers: [],

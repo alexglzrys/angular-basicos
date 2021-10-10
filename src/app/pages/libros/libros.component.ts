@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http'
 import { LibrosSeleccionadosService } from '../../services/libros-seleccionados.service';
 
 interface Libro {
@@ -18,17 +19,15 @@ interface Libro {
 export class LibrosComponent implements OnInit {
 
   libros: Array<Libro> = []
+  errorHttp: boolean = false
+  loading: boolean = true
 
-  constructor(private librosSeleccionadosService: LibrosSeleccionadosService) { }
+  // Servicios y cliente http se inyectan en el constructor
+  constructor(private librosSeleccionadosService: LibrosSeleccionadosService,
+              private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.libros = [
-      {id: 1, title: 'PHP dede Cero', description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit, conubia ornare class tincidunt etiam leo senectus, mauris curabitur nunc nostra phasellus a. Nostra velit fames mattis mauris tristique neque dictumst fringilla, sociis convallis id posuere maecenas sodales mus blandit eros, dignissim justo rutrum nullam vulputate pulvinar ut. Ligula accumsan sagittis luctus nec torquent fusce faucibus litora senectus leo, aliquam maecenas potenti natoque eget curabitur bibendum elementum eros taciti mattis, quis quam justo vulputate sem diam cum nulla a.', author: 'Nicolas Mendienta', image: 'https://via.placeholder.com/150', url: 'http://www.libro.com'},
-      {id: 2, title: 'Bases de Datos Relacionales', description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit, conubia ornare class tincidunt etiam leo senectus, mauris curabitur nunc nostra phasellus a. Nostra velit fames mattis mauris tristique neque dictumst fringilla, sociis convallis id posuere maecenas sodales mus blandit eros, dignissim justo rutrum nullam vulputate pulvinar ut. Ligula accumsan sagittis luctus nec torquent fusce faucibus litora senectus leo, aliquam maecenas potenti natoque eget curabitur bibendum elementum eros taciti mattis, quis quam justo vulputate sem diam cum nulla a.', author: 'Mario Molina', image: 'https://via.placeholder.com/150', url: 'http://www.libro.com'},
-      {id: 3, title: 'CSS Avanzado', description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit, conubia ornare class tincidunt etiam leo senectus, mauris curabitur nunc nostra phasellus a. Nostra velit fames mattis mauris tristique neque dictumst fringilla, sociis convallis id posuere maecenas sodales mus blandit eros, dignissim justo rutrum nullam vulputate pulvinar ut. Ligula accumsan sagittis luctus nec torquent fusce faucibus litora senectus leo, aliquam maecenas potenti natoque eget curabitur bibendum elementum eros taciti mattis, quis quam justo vulputate sem diam cum nulla a.', author: 'Valeria González', image: 'https://via.placeholder.com/150', url: 'http://www.libro.com'},
-      {id: 4, title: 'Git', description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit, conubia ornare class tincidunt etiam leo senectus, mauris curabitur nunc nostra phasellus a. Nostra velit fames mattis mauris tristique neque dictumst fringilla, sociis convallis id posuere maecenas sodales mus blandit eros, dignissim justo rutrum nullam vulputate pulvinar ut. Ligula accumsan sagittis luctus nec torquent fusce faucibus litora senectus leo, aliquam maecenas potenti natoque eget curabitur bibendum elementum eros taciti mattis, quis quam justo vulputate sem diam cum nulla a.', author: 'Santiago Ramírez', image: 'https://via.placeholder.com/150', url: 'http://www.libro.com'},
-      {id: 5, title: 'Linux', description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit, conubia ornare class tincidunt etiam leo senectus, mauris curabitur nunc nostra phasellus a. Nostra velit fames mattis mauris tristique neque dictumst fringilla, sociis convallis id posuere maecenas sodales mus blandit eros, dignissim justo rutrum nullam vulputate pulvinar ut. Ligula accumsan sagittis luctus nec torquent fusce faucibus litora senectus leo, aliquam maecenas potenti natoque eget curabitur bibendum elementum eros taciti mattis, quis quam justo vulputate sem diam cum nulla a.', author: 'Mireya González', image: 'https://via.placeholder.com/150', url: 'http://www.libro.com'}
-    ]
+    this.cargarLibros()
   }
 
   masInformacion(libro:Libro) {
@@ -38,6 +37,18 @@ export class LibrosComponent implements OnInit {
   agregarLibro(libro: Libro)
   {
     this.librosSeleccionadosService.agregarLibro(libro)
+  }
+
+  cargarLibros()
+  {
+    this.http.get<Libro[]>('assets/json/libros.json').subscribe(libros => {
+      this.libros = libros
+      this.loading = false
+    }, (response) => {
+      if (response.status == 404) {
+        this.errorHttp = true
+      }
+    })
   }
 
 }

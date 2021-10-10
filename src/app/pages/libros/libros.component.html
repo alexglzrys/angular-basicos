@@ -1,4 +1,6 @@
-<div class="libros">
+<div class="libros" *ngIf="!errorHttp; else plantilla404">
+  <!-- Indicador de precarga, para simular en desarrollo en chrome ir a networks, activar throttling -->
+  <p *ngIf="loading">Cargando...</p>
   <!-- Directivas repetitivas -->
   <div class="libro" *ngFor="let libro of libros; index as i; first as esPrimero; last as esUltimo; odd as esPar; even as esImpar">
     <figure>
@@ -17,3 +19,9 @@
     </figure>
   </div>
 </div>
+<ng-template #plantilla404>
+  <div class="error404">
+    <img src="assets/images/error.svg" alt="Error 404">
+    <p>Servicio no disponible por el momento</p>
+  </div>
+</ng-template>
