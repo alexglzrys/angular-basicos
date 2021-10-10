@@ -1,0 +1,11 @@
+<header class="header">
+  <h1>App Angular</h1>
+  <p>Esta es una aplicación básica desarrollada en Angular 11</p>
+</header>
+<nav>
+  <ul class="nav">
+    <li><a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+    <li><a [routerLink]="['/libros']" routerLinkActive="active">Libros</a></li>
+    <li><a [routerLink]="['/acerca-de']" routerLinkActive="active">Acerca de</a></li>
+  </ul>
+</nav>

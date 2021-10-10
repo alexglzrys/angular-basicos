@@ -2,27 +2,33 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { AleatorioComponent } from './components/aleatorio/aleatorio.component';
-import { ColoresComponent } from './components/colores/colores.component';
-import { InformacionComponent } from './components/informacion/informacion.component';
-import { OpcionesComponent } from './components/opciones/opciones.component';
-import { FormsModule } from '@angular/forms';
-import { EstilosComponent } from './components/estilos/estilos.component';
-import { ListaComponent } from './components/lista/lista.component';
+import { AcercaDeComponent } from './pages/acerca-de/acerca-de.component';
+import { LibrosComponent } from './pages/libros/libros.component';
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './pages/home/home.component';
+import { PagesModule } from './pages/pages.module';
+import { HeaderComponent } from './components/header/header.component';
+import { ErrorComponent } from './pages/error/error.component';
+import { DetallesComponent } from './pages/detalles/detalles.component';
 
+// Definición del sistema de rutas principal
+const routes: Routes = [
+  {path: '', component: HomeComponent, pathMatch: 'full'},
+  {path: 'acerca-de', component: AcercaDeComponent},
+  {path: 'libros', component: LibrosComponent},
+  {path: 'detalles/:libroId', component: DetallesComponent},
+  {path: '404', component: ErrorComponent},
+  {path: '**', redirectTo: '404'}
+]
 @NgModule({
   declarations: [
     AppComponent,
-    AleatorioComponent,
-    ColoresComponent,
-    InformacionComponent,
-    OpcionesComponent,
-    EstilosComponent,
-    ListaComponent
+    HeaderComponent,
   ],
   imports: [
+    PagesModule,
     BrowserModule,
-    FormsModule,  // Necesaria para trabajar con ngModel
+    RouterModule.forRoot(routes), // Registrar las rutas de la aplicación
   ],
   providers: [],
   bootstrap: [AppComponent]

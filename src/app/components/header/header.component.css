@@ -1,0 +1,24 @@
+.header {
+  background-color: red;
+  color: white;
+  padding: 2rem;
+}
+.nav {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  background-color: steelblue;
+  padding: 1rem 2rem;
+}
+.nav a {
+  text-decoration: none;
+  display: inline-block;
+  padding: .5rem;
+  color: white;
+  text-transform: uppercase;
+  transition: all .3s;
+}
+.nav a.active {
+  background-color: white;
+  color: steelblue;
+}

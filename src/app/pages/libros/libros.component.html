@@ -1,4 +1,4 @@
-<div class="lista">
+<div class="libros">
   <!-- Directivas repetitivas -->
   <div class="libro" *ngFor="let libro of libros; index as i; first as esPrimero; last as esUltimo; odd as esPar; even as esImpar">
     <figure>
@@ -10,6 +10,8 @@
         <div *ngIf="esPrimero" class="info" (click)="masInformacion(libro)">Más vendido</div>
         <div *ngIf="esUltimo" class="info">El menos vendido</div>
         <div *ngIf="i == 2" class="descuento">Descuento del 20%</div>
+        <br>
+        <a [routerLink]="['/detalles', libro.id]">Ver información del libro</a>
       </figcaption>
     </figure>
   </div>
