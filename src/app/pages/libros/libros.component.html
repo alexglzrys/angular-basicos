@@ -11,7 +11,8 @@
         <div *ngIf="esUltimo" class="info">El menos vendido</div>
         <div *ngIf="i == 2" class="descuento">Descuento del 20%</div>
         <br>
-        <a [routerLink]="['/detalles', libro.id]">Ver información del libro</a>
+        <!-- Se puede tener acción de click en un enlace -->
+        <a (click)="agregarLibro(libro)" [routerLink]="['/detalles', libro.id]">Ver información del libro</a>
       </figcaption>
     </figure>
   </div>

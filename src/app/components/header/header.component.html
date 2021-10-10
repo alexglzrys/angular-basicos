@@ -1,6 +1,17 @@
 <header class="header">
   <h1>App Angular</h1>
   <p>Esta es una aplicación básica desarrollada en Angular 11</p>
+  <button class="cart" (click)="mostrarLista = !mostrarLista">Carrito</button>
+  <div class="listalibros" *ngIf="mostrarLista">
+    <h4>Libros seleccionados</h4>
+    <ul *ngIf="librosAgregados.length; else casoContrario">
+      <li *ngFor="let libro of librosAgregados">{{ libro.title }}</li>
+    </ul>
+    <ng-template #casoContrario>
+      <p>No se han agregado libros por el momento</p>
+    </ng-template>
+
+  </div>
 </header>
 <nav>
   <ul class="nav">

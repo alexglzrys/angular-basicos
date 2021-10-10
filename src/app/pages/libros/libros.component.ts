@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LibrosSeleccionadosService } from '../../services/libros-seleccionados.service';
 
 interface Libro {
   id: number
@@ -18,7 +19,7 @@ export class LibrosComponent implements OnInit {
 
   libros: Array<Libro> = []
 
-  constructor() { }
+  constructor(private librosSeleccionadosService: LibrosSeleccionadosService) { }
 
   ngOnInit(): void {
     this.libros = [
@@ -32,6 +33,11 @@ export class LibrosComponent implements OnInit {
 
   masInformacion(libro:Libro) {
     alert(`Este libro ${libro?.title} es el más vendido, y pertenece al autor ${libro?.author}`)
+  }
+
+  agregarLibro(libro: Libro)
+  {
+    this.librosSeleccionadosService.agregarLibro(libro)
   }
 
 }
