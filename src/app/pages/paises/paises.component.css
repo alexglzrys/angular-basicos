@@ -1,0 +1,14 @@
+.destacado {
+    background-color: tomato;
+    color: white;
+    padding: .8rem .5rem;
+}
+li {
+    list-style: none;
+    padding: .5rem;
+    transition: all .3s;
+    cursor: pointer;
+}
+li[data-seleccionado="true"]:not(.destacado) {
+    background-color: thistle;
+}

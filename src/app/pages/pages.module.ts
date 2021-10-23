@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { ErrorComponent } from './error/error.component';
 import { DetallesComponent } from './detalles/detalles.component';
 import { RouterModule } from '@angular/router';
+import { PaisesComponent } from './paises/paises.component';
 
 
 
@@ -27,6 +28,7 @@ import { RouterModule } from '@angular/router';
     EstilosComponent,
     ErrorComponent,
     DetallesComponent,
+    PaisesComponent,
   ],
   imports: [
     CommonModule,

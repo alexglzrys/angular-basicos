@@ -11,6 +11,7 @@ import { PagesModule } from './pages/pages.module';
 import { HeaderComponent } from './components/header/header.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { DetallesComponent } from './pages/detalles/detalles.component';
+import { PaisesComponent } from './pages/paises/paises.component';
 
 // Definición del sistema de rutas principal
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'acerca-de', component: AcercaDeComponent},
   {path: 'libros', component: LibrosComponent},
   {path: 'detalles/:libroId', component: DetallesComponent},
+  {path: 'paises', component: PaisesComponent},
   {path: '404', component: ErrorComponent},
   {path: '**', redirectTo: '404'}
 ]

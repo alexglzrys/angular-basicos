@@ -1,0 +1,5 @@
+<ul>
+    <li *ngFor="let pais of paises" (click)="mostrarActivo(elemento)" #elemento>{{ pais.nombre }}</li>
+</ul>
+
+<button type="button" disabled #miBoton>No puedes viajar</button>
